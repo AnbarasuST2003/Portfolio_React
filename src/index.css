@@ -667,8 +667,8 @@ body.dark-theme {
 }
 
 .about__shadow {
-  width: 150px;
-  height: 385px;
+  width: 230px;
+  height: 330px;
   background-color: var(--body-color);
   top: -2.5rem;
   right: -3.5rem;
@@ -948,7 +948,7 @@ body.dark-theme {
 }
 
 .project__footer a {
-  margin: 0 0 0 90%;
+  margin: 0 0 0 80%;
 }
 .project__footer a:hover {
   color: var(--black-color);
@@ -1709,8 +1709,8 @@ footer .box:nth-child(3) ul li {
     border: 8px solid var(--white-color);
   }
   .about__shadow {
-    width: 240px;
-    height: 615px;
+    width: 350px;
+    height: 485px;
     top: -4rem;
     right: -5.5rem;
     border-bottom: 6px solid var(--first-color);

@@ -28,13 +28,14 @@ const ProList = () => {
     <div>
       {projectData ? (
         <section className="about section" id="about">
+            <h2 className="section__title-1">
+              <span>{projectData.name}</span>
+            </h2>
           <div className="about__container container grid">
-            <h2 className="section__title-1">Project Details.</h2>
-
-            <div className="about__perfil">
+            {/* <div className="about__perfil">
               <div className="about__image">
                 <img
-                  src="./assets/img/icecream.png"
+                  src="./"
                   alt=""
                   className="about__img"
                 />
@@ -49,15 +50,12 @@ const ProList = () => {
                 />
                 <div className="about__box"></div>
               </div>
-            </div>
+            </div> */}
             <div className="about__info">
               <p className="about__description">
-                <b>{projectData.project_name}</b>
+                <b>{projectData.title}</b>
               </p>
               <ul className="about__list">
-                <li className="about__details">
-                  {projectData.project_heading}
-                </li>
                 <li className="about__details">{projectData.duration}</li>
                 <li className="about__details">{projectData.type}</li>
                 <li className="about__details">{projectData.description}</li>

@@ -5,64 +5,64 @@ import { useEffect, useState } from "react";
 import MyProjectData from "../services/my.project";
 import { Link } from "react-router-dom";
 const Projects = ({ getProjectId }) => {
-  //Projects Call data
-  const [project, setProject] = useState([]);
+	//Projects Call data
+	const [project, setProject] = useState([]);
 
-  useEffect(() => {
-    getProjects();
-  }, []);
+	useEffect(() => {
+		getProjects();
+	}, []);
 
-  const getProjects = async () => {
-    const data = await MyProjectData.getAllProject();
-    console.log(data);
-    setProject(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  };
+	const getProjects = async () => {
+		const data = await MyProjectData.getAllProject();
+		console.log(data);
+		setProject(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+	};
 
-  return (
-    //<!--==================== PROJECTS ====================-->
-    <section className="projects section" id="projects">
-      <h2 className="section__title-1">
-        <span>Projects.</span>
-      </h2>
+	return (
+		//<!--==================== PROJECTS ====================-->
+		<section className="projects section" id="projects">
+			<h2 className="section__title-1">
+				<span>Projects.</span>
+			</h2>
 
-      <div className="projects__container grid">
-        {project.map((doc) => {
-          return (
-            <article className="projects__card">
-              <div className="projects__image">
-                <img src={pro2} alt="image" className="projects__img" />
+			<div className="projects__container grid">
+				{project.map((doc) => {
+					return (
+						<article className="projects__card">
+							<div className="projects__image">
+								<img src={pro2} alt="image" className="projects__img" />
 
-                <Link
-                  to={`/projectsummary/${doc.id}`} // Pass the project ID as a URL parameter
-                  onClick={(e) => getProjectId(doc.id)}
-                  className="projects_arrow_button button"
-                  // onClick={(e) => getProjectId(doc.id)}
-                >
-                  <i className="ri-arrow-right-up-line"></i>
-                </Link>
-              </div>
+								<Link
+									to={`/projectsummary/${doc.id}`} // Pass the project ID as a URL parameter
+									onClick={(e) => getProjectId(doc.id)}
+									className="projects_arrow_button button"
+								// onClick={(e) => getProjectId(doc.id)}
+								>
+									<i className="ri-arrow-right-up-line"></i>
+								</Link>
+							</div>
 
-              <div className="projects__content">
-                <h3 className="projects__subtitle">{doc.title}</h3>
-                <h2 className="projects__title">{doc.name}</h2>
+							<div className="projects__content">
+								<h3 className="projects__subtitle">{doc.title}</h3>
+								<h2 className="projects__title">{doc.name}</h2>
 
-                <p className="projects__description">{doc.description}</p>
-              </div>
+								<p className="projects__description">{doc.description}</p>
+							</div>
 
-              <div className="projects__buttons">
-                <a
-                  href={doc.gitlink}
-                  target="_blank"
-                  className="projects__link"
-                >
-                  <i className="ri-github-line"></i>View
-                </a>
-              </div>
-            </article>
-          );
-        })}
+							<div className="projects__buttons">
+								<a
+									href={doc.gitlink}
+									target="_blank"
+									className="projects__link"
+								>
+									<i className="ri-github-line"></i>View
+								</a>
+							</div>
+						</article>
+					);
+				})}
 
-        {/* <article className="projects__card">
+				{/* <article className="projects__card">
           <div className="projects__image">
             <img src={pro2} alt="image" className="projects__img" />
 
@@ -152,12 +152,12 @@ const Projects = ({ getProjectId }) => {
             </a>
           </div>
         </article> */}
-      </div>
-      <div className="project__footer">
-        <a href="error.html">See All</a>
-      </div>
-    </section>
-  );
+			</div>
+			<div className="project__footer">
+				<a href="error.html"><strong>See All ></strong></a>
+			</div>
+		</section>
+	);
 };
 
 export default Projects;
