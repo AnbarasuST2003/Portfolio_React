@@ -190,8 +190,7 @@ body.dark-theme {
 }
 
 .dark-theme .home__description {
-  background: linear-gradient(90deg, hsl(163, 68%, 45%, 0.3)),
-    hsl(163, 68%, 45%);
+  background: linear-gradient(90deg, hsl(0, 0%, 8%)),
 }
 
 .dark-theme :is(.button__ghost) {
